@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class FizzBuzzServlet
+ * @author Demonna Evelyn Wade
  */
 @WebServlet(description = "Kenzan Interview Project", urlPatterns = { "/FizzBuzzServlet/*" })
 public class FizzBuzzServlet extends HttpServlet {
@@ -18,6 +19,8 @@ public class FizzBuzzServlet extends HttpServlet {
     private String result;
     /**
      * @see HttpServlet#HttpServlet()
+     * @param no parameters required for default constructor
+     * initializes all the variables used in this class
      */
     public FizzBuzzServlet() {
         super();
@@ -28,6 +31,8 @@ public class FizzBuzzServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @param HTTP Server request, HTTP Server Response
+	 * This is communicating with the server through the web page.
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -38,17 +43,12 @@ public class FizzBuzzServlet extends HttpServlet {
 		this.pathInfo = this.pathInfo.replace("/", "");
 		// telling the user the information/value received for the FizzBuzz problem 
 		response.getWriter().write("Testing FizzBuzz from 1 to " + this.pathInfo + "\n");
+		// using the solve Object, call the solveFizzBizz that calculate the answers to the FizzBuzz problem
 		solve.solveFizzBuzz(Integer.parseInt(this.pathInfo));
+		// grab the results in a string from 
 		this.result = solve.printAnswers();
+		// write those results to the web browser page
 		response.getWriter().write(result + "\n");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
