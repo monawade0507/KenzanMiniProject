@@ -1,5 +1,6 @@
 # KenzanMiniProject
 git repository for the Kenzan Interview mini-project
+github repository link: https://github.com/monawade0507/KenzanMiniProject.git
 
 To the best of my ability, I have completed the tasks listed out in the FizzBuzz assignment.
 
